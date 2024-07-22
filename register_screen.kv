@@ -1,0 +1,35 @@
+<RegisterScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: [20, 20, 20, 20]
+        spacing: 20
+
+        MDTextField:
+            id: name_field
+            hint_text: "Name"
+            size_hint_x: 0.8
+            pos_hint: {"center_x": 0.5}
+
+        MDTextField:
+            id: email_field
+            hint_text: "Email"
+            size_hint_x: 0.8
+            pos_hint: {"center_x": 0.5}
+
+        MDTextField:
+            id: password_field
+            hint_text: "Password"
+            size_hint_x: 0.8
+            pos_hint: {"center_x": 0.5}
+            password: True
+
+        MDRaisedButton:
+            text: "Register"
+            pos_hint: {"center_x": 0.5}
+            on_release: root.register_user()
+
+        MDLabel:
+            id: message
+            text: ""
+            halign: "center"
+            theme_text_color: "Error"

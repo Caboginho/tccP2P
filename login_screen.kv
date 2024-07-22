@@ -1,0 +1,29 @@
+<LoginScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: [20, 20, 20, 20]
+        spacing: 20
+
+        MDTextField:
+            id: email_field
+            hint_text: "Email"
+            size_hint_x: 0.8
+            pos_hint: {"center_x": 0.5}
+
+        MDTextField:
+            id: password_field
+            hint_text: "Password"
+            size_hint_x: 0.8
+            pos_hint: {"center_x": 0.5}
+            password: True
+
+        MDRaisedButton:
+            text: "Login"
+            pos_hint: {"center_x": 0.5}
+            on_release: root.do_login()
+
+        MDLabel:
+            id: message
+            text: ""
+            halign: "center"
+            theme_text_color: "Error"

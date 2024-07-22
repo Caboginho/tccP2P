@@ -33,5 +33,15 @@ class Database:
             cursor = self.connection.cursor()
             cursor.execute("SELECT * FROM users WHERE email = ? AND password = ?", (email, password))
             return cursor.fetchone()
+    
+    def get_product(self, name):
+        with self.connection:
+            cursor = self.connection.cursor()
+            cursor.execute("SELECT * FROM products WHERE name = ?", (name,))
+            return cursor.fetchone()
+
+    def delete_product(self, name):
+        with self.connection:
+            self.connection.execute("DELETE FROM products WHERE name = ?", (name,))
 
     # Adicionar outros métodos conforme necessário
