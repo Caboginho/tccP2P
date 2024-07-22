@@ -28,4 +28,10 @@ class Database:
                 (name, description, price, seller_id)
             )
 
+    def check_login(self, email, password):
+        with self.connection:
+            cursor = self.connection.cursor()
+            cursor.execute("SELECT * FROM users WHERE email = ? AND password = ?", (email, password))
+            return cursor.fetchone()
+
     # Adicionar outros métodos conforme necessário

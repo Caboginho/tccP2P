@@ -15,6 +15,7 @@ from login_screen import LoginScreen
 from home_screen import HomeScreen
 from product_screen import ProductScreen
 from user_screen import UserScreen
+from register_screen import RegisterScreen
 from database import Database
 
 Window.size = (360, 640)  # Define o tamanho da janela
@@ -26,6 +27,7 @@ class MainApp(MDApp):
 
         sm = ScreenManager()
         sm.add_widget(LoginScreen(name='login'))
+        sm.add_widget(RegisterScreen(name='register'))
         sm.add_widget(HomeScreen(name='home'))
         sm.add_widget(ProductScreen(name='product'))
         sm.add_widget(UserScreen(name='user'))
@@ -33,3 +35,4 @@ class MainApp(MDApp):
 
 if __name__ == '__main__':
     MainApp().run()
+

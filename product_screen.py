@@ -2,7 +2,6 @@ from kivy.uix.screenmanager import Screen
 from kivymd.uix.button import MDRaisedButton
 from kivymd.uix.textfield import MDTextField
 from kivymd.uix.boxlayout import MDBoxLayout
-from main import MDApp
 
 class ProductScreen(Screen):
     def __init__(self, **kwargs):
@@ -51,5 +50,5 @@ class ProductScreen(Screen):
         description = self.description.text
         price = float(self.price.text)
         seller_id = int(self.seller_id.text)
-        app = MDApp.get_running_app()
-        app.db.insert_product(name, description, price, seller_id)
+        #app = MDApp.get_running_app()
+        #app.db.insert_product(name, description, price, seller_id)

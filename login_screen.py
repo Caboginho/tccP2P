@@ -3,6 +3,7 @@ from kivymd.uix.button import MDRaisedButton
 from kivymd.uix.textfield import MDTextField
 from kivymd.uix.label import MDLabel
 from kivymd.uix.boxlayout import MDBoxLayout
+from kivymd.app import MDApp
 
 class LoginScreen(Screen):
     def __init__(self, **kwargs):
@@ -43,7 +44,9 @@ class LoginScreen(Screen):
     def do_login(self, instance):
         email = self.email.text
         password = self.password.text
-        if email and password:
+        app = MDApp.get_running_app()
+        user = app.db.check_login(email, password)
+        if user:
             self.manager.current = 'home'
         else:
-            self.message.text = "Please enter both email and password"
+            self.message.text = "Invalid email or password"
