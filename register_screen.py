@@ -9,3 +9,4 @@ class RegisterScreen(Screen):
         app = MDApp.get_running_app()
         app.db.insert_user(name, email, password, 'client')
         self.ids.message.text = "User registered successfully!"
+        self.manager.current = 'product'

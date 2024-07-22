@@ -10,4 +10,4 @@ class LoginScreen(Screen):
         if user:
             self.manager.current = 'product'
         else:
-            self.ids.message.text = "Invalid credentials"
+            self.manager.current = 'register'
