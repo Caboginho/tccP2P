@@ -1,0 +1,55 @@
+<ClientScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: [20, 20, 20, 20]
+        spacing: 20
+
+        MDTextField:
+            id: name_field
+            hint_text: "Product Name"
+            size_hint_x: 0.8
+            pos_hint: {"center_x": 0.5}
+
+        MDTextField:
+            id: description_field
+            hint_text: "Description"
+            size_hint_x: 0.8
+            pos_hint: {"center_x": 0.5}
+
+        MDTextField:
+            id: price_field
+            hint_text: "Price"
+            size_hint_x: 0.8
+            pos_hint: {"center_x": 0.5}
+
+        MDTextField:
+            id: seller_id_field
+            hint_text: "Seller ID"
+            size_hint_x: 0.8
+            pos_hint: {"center_x": 0.5}
+
+        MDRaisedButton:
+            text: "Search Product"
+            pos_hint: {"center_x": 0.5}
+            on_release: root.search_product()
+
+        MDRaisedButton:
+            text: "Purchase Product"
+            pos_hint: {"center_x": 0.5}
+            on_release: root.purchase_product()
+
+        MDRaisedButton:
+            text: "Reserve Product"
+            pos_hint: {"center_x": 0.5}
+            on_release: root.reserve_product()
+
+        MDRaisedButton:
+            text: "Rent Product"
+            pos_hint: {"center_x": 0.5}
+            on_release: root.rent_product()
+
+        MDLabel:
+            id: message
+            text: ""
+            halign: "center"
+            theme_text_color: "Error"
