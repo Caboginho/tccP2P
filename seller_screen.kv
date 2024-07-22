@@ -1,0 +1,44 @@
+<SellerScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: [20, 20, 20, 20]
+        spacing: 20
+
+        MDTextField:
+            id: name_field
+            hint_text: "Product Name"
+            size_hint_x: 0.8
+            pos_hint: {"center_x": 0.5}
+
+        MDTextField:
+            id: description_field
+            hint_text: "Description"
+            size_hint_x: 0.8
+            pos_hint: {"center_x": 0.5}
+
+        MDTextField:
+            id: price_field
+            hint_text: "Price"
+            size_hint_x: 0.8
+            pos_hint: {"center_x": 0.5}
+
+        MDRaisedButton:
+            text: "Add Product"
+            pos_hint: {"center_x": 0.5}
+            on_release: root.add_product()
+
+        MDRaisedButton:
+            text: "Update Product"
+            pos_hint: {"center_x": 0.5}
+            on_release: root.update_product()
+
+        MDRaisedButton:
+            text: "Delete Product"
+            pos_hint: {"center_x": 0.5}
+            on_release: root.delete_product()
+
+        MDLabel:
+            id: message
+            text: ""
+            halign: "center"
+            theme_text_color: "Error"

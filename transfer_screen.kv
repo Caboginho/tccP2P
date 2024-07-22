@@ -1,0 +1,34 @@
+<TransferScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: [20, 20, 20, 20]
+        spacing: 20
+
+        MDTextField:
+            id: from_user_field
+            hint_text: "From User"
+            size_hint_x: 0.8
+            pos_hint: {"center_x": 0.5}
+
+        MDTextField:
+            id: to_user_field
+            hint_text: "To User"
+            size_hint_x: 0.8
+            pos_hint: {"center_x": 0.5}
+
+        MDTextField:
+            id: amount_field
+            hint_text: "Amount"
+            size_hint_x: 0.8
+            pos_hint: {"center_x": 0.5}
+
+        MDRaisedButton:
+            text: "Transfer Funds"
+            pos_hint: {"center_x": 0.5}
+            on_release: root.transfer_funds()
+
+        MDLabel:
+            id: message
+            text: ""
+            halign: "center"
+            theme_text_color: "Error"
