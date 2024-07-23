@@ -7,4 +7,3 @@ class TransferScreen(Screen):
         amount = float(self.ids.amount_field.text)
         # Aqui você deve implementar a lógica de transferência de fundos entre usuários
         self.ids.message.text = f"Transferred {amount} from {from_user} to {to_user}"
-v
