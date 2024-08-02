@@ -18,13 +18,14 @@ from client_screen import ClientScreen
 from seller_screen import SellerScreen
 from transfer_screen import TransferScreen
 from payment_screen import PaymentScreen
-
+from abertura_screen import AberturaScreen
 class MainApp(MDApp):
     def build(self):
         self.db = Database()
         self.load_all_kv_files()
 
         sm = ScreenManager()
+        sm.add_widget(AberturaScreen(name='abertura'))
         sm.add_widget(LoginScreen(name='login'))
         sm.add_widget(RegisterScreen(name='register'))
         sm.add_widget(ProductScreen(name='product'))
@@ -36,6 +37,7 @@ class MainApp(MDApp):
         return sm
 
     def load_all_kv_files(self):
+        Builder.load_file('abertura_screen.kv')
         Builder.load_file('login_screen.kv')
         Builder.load_file('register_screen.kv')
         Builder.load_file('product_screen.kv')

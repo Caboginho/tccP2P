@@ -21,6 +21,11 @@
             text: "Login"
             pos_hint: {"center_x": 0.5}
             on_release: root.do_login()
+        
+        MDRaisedButton:
+            text: "register"
+            pos_hint: {"center_x": 0.5}
+            on_release: root.do_move('register')
 
         MDLabel:
             id: message

@@ -6,8 +6,9 @@ class LoginScreen(Screen):
         email = self.ids.email_field.text
         password = self.ids.password_field.text
         app = MDApp.get_running_app()
-        user = app.db.get_user(email, password)
-        if user:
-            self.manager.current = 'product'
+        if app.db.get_user(email, password):
+            self.do_move('client')
         else:
-            self.manager.current = 'register'
+            self.do_move('register')
+    def do_move(self, screen):
+        self.manager.current = screen
